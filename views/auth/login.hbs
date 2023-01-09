@@ -1,0 +1,18 @@
+<h1>Login Page</h1>
+
+<form action="/auth/login" method="POST">
+ 
+    <label> Email
+      <input type="text" name="email" placeholder="Enter you email" maxlength="20"/>
+    </label>
+ 
+    <label>Password
+      <input type="password" name="password" placeholder="********" maxlength="20"/>
+    </label>
+ 
+    <button type="submit">Login</button>
+ 
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+</form>
