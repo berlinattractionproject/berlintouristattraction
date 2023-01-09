@@ -23,6 +23,8 @@ require("./config/session.config")(app);// this will make the express server abl
 const capitalize = require("./utils/capitalize");
 const projectName = "berlin attractions";
 
+
+
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
 // 👇 Start handling routes here
@@ -31,12 +33,10 @@ app.use("/", indexRoutes);
 
 const authRoutes = require('./routes/auth.routes');
 app.use("/auth", authRoutes);
+const placeRoutes = require("./routes/place.routes");
+app.use("/place", placeRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
 module.exports = app;
-//This is Avni Branch
-// testing for gi hub --Avni
-
-// David's comment on main branch

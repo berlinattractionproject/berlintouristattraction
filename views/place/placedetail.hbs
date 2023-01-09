@@ -1,0 +1,25 @@
+<h1>Place details</h1>
+
+{{!-- if the user is logged in, show: --}}
+<form action="/place/edit/{{id}}">
+   <input type="text" name="name" value="{{name}}">
+    <input type="text" name="address" value="{{address}}">
+    <input type="number" name="zipCode" value="{{zipCode}}">
+    <textarea name="description" cols="30" rows="10">{{description}}</textarea>
+    <input type="string" name="category" value="{{category}}">
+    <button type="submit">Save changes</button>
+</form>
+
+<form action="/place/delete/{{id}}" method="post">
+<button type="submit">Delete</button>
+</form>
+
+{{!-- if the user is NOT loggend in, show: --}}
+
+
+    <div>
+    <h3>{{name}}</h3>
+      <p>Address: {{address}} {{zipCode}} Berlin</p>
+      <p>{{description}}</p>
+      <p>{{category}}</p>
+    </div>
