@@ -1,0 +1,15 @@
+<h1>This is the place list</h1>
+
+<ul>
+  {{#each place}}
+    <div>
+      <a href="/place/detail/{{id}}">
+        <h3>{{name}}</h3>
+      </a>
+      <p>Address: {{address}} {{zipCode}} Berlin</p>
+      <p>{{description}}</p>
+      <p>{{category}}</p>
+    </div>
+
+  {{/each}}
+</ul>

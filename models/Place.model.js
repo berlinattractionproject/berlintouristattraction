@@ -1,26 +1,31 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const placeSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
       trim: true,
       required: true,
       unique: true
     },
-    email: {
+    address: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
       trim: true
     },
-    password: {
+    zipCode: {
       type: String,
       required: true
     },
-    places: [{ type: Schema.Types.ObjectId, ref: "Place" }]
+    description: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
@@ -28,6 +33,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+const Place = model("Place", placeSchema);
 
-module.exports = User;
+module.exports = Place;
