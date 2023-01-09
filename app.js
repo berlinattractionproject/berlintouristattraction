@@ -17,10 +17,13 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
+require("./config/session.config")(app);// this will make the express server able to add a req.session property for every incoming request
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "berlinattractions";
+const projectName = "berlin attractions";
+
+
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
@@ -28,6 +31,8 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
+const authRoutes = require('./routes/auth.routes');
+app.use("/auth", authRoutes);
 const placeRoutes = require("./routes/place.routes");
 app.use("/place", placeRoutes);
 
@@ -35,4 +40,3 @@ app.use("/place", placeRoutes);
 require("./error-handling")(app);
 
 module.exports = app;
-
