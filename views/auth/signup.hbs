@@ -2,12 +2,18 @@
 
 <form action="/auth/signup" method="post">
     <div>
-        <input type="text" name="username" placeholder="Enter your username..." maxlength="20" required>
-        <input type="email" name="email" placeholder="Enter your email..." maxlength="20" required>
-        <input type="password" name="password" placeholder="Enter your password..." maxlength="20" required>
+        <label><b>Username</b>
+            <input type="text" name="username" placeholder="Enter your username..." maxlength="20" required>
+        </label>
+        <label><b>Email</b>
+            <input type="email" name="email" placeholder="Enter your email..." maxlength="20" required>
+        </label>
+        <label><b>Password</b>
+            <input type="password" name="password" placeholder="Enter your password..." maxlength="20" required>
+        </label>
     </div>
     <div>
-        <button type="submit">Create User</button>
+        <button class="buttonclass" type="submit">Create User</button>
     </div>
 </form>
 
