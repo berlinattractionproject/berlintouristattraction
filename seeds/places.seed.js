@@ -25,7 +25,7 @@ const places = [
 mongoose
 .connect(MONGO_URI)
 .then((x)=> console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
-.then(()=> Place.create(drones))
+.then(()=> Place.create(places))
 .then((placesSeeded)=>console.log(placesSeeded))
 .then(()=>{
   mongoose.connection.close(() => {
