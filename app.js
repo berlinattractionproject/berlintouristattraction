@@ -21,11 +21,10 @@ require("./config/session.config")(app);// this will make the express server abl
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "berlin attractions";
+const projectName = "berlin Attractions";
+app.locals.appTitle = `${capitalize(projectName)}`;
 
 
-
-app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
