@@ -18,7 +18,8 @@ window.addEventListener('load', () => {
       // placePlaces(response.data.places);
       response.data.places.forEach((place)=> {
         const {address,zipCode,name} = place
-        const fullAddress = `${address},${zipCode}`
+        const fullAddress = `${address}`
+        // const fullAddress = `${address},${zipCode}`
         console.log(name)
 
         geocodeAddress(geocoder, map, fullAddress,name)

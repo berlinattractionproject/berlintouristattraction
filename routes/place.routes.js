@@ -8,24 +8,44 @@ const Place = require("../models/Place.model");
 /* List of all Places */
 
 router.get("/placelist", (req, res, next) => {
+  const { currentUser } = req.session;
+
+
   Place.find()
-    .then((place) => res.render("place/placelist", { place }))
+    .then((place) => res.render("place/placelist", { place,currentUser }))
     .catch((err) => console.log(err));
+});
+
+router.get("/myplaces", (req, res, next) => {
+  console.log(req.session.currentUser)
+  const {username} = req.session.currentUser
+  const { currentUser } = req.session;
+
+  Place.find({username:username})
+    .then((placesFound)=>{
+      console.log(placesFound)
+      res.render('place/myplaces',{placesFound,currentUser})
+    }
+    
+    )
+
 });
 
 /* Map of all places */
 
-router.get('/placeMap',(req,res)=>{
-  res.render('place/placeMap')
+// router.get('/placeMap',(req,res)=>{
+//   res.render('place/placeMap')
   
-})
+// })
 
 /* Create a new Place */
 
 router.get("/create",isLoggedIn, (req, res) => {
   const allCategories = [];
-  const {currentUser} = req.session
-    console.log(req.session.currentUser);
+
+  const { currentUser } = req.session;
+
+
   Place.find()
     .then((allplaces) => {
       allplaces.forEach((place) => {
