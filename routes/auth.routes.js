@@ -40,19 +40,19 @@ router.post("/signup", isLoggedOut, async (req, res) => {
     const passwordHash = await bcrypt.hash(password, saltRounds);
     User.create({username,email,password: passwordHash,})
     .then((newUser) => {
-      req.session.currentUser = {username: newUser.username};
-      res.redirect(`/auth/placelist`)
+      /* req.session.currentUser = {username: newUser.username};*/
+      res.redirect(`/auth/login`)
     })
     .catch(err => console.log(err))
 })
 
-router.get("/placelist", (req, res) => {
-    console.log('place list route', req.session);
+router.get("/create", (req, res) => {
+    console.log('create place route', req.session);
     const { currentUser } = req.session;
     console.log('Current ', currentUser);
     currentUser.loggedIn = true;
     
-    res.render("auth/placelist",currentUser)
+    res.render("place/create",currentUser)
 })
 
 
@@ -85,7 +85,9 @@ router.get("/login", isLoggedOut, (req, res) => {
       } else if (bcrypt.compareSync(password, user.password)) { // if password is correct
         const { username, email } = user;
         req.session.currentUser = { username, email }; // creating the property currentUser 
-        res.redirect('/auth/placelist')
+        req.session.currentUser.isLoggedIn = true;
+        console.log("Session details",req.session)
+        res.redirect('/place/create')
         
       } else { // if password is incorect
         res.render('auth/login', { errorMessage: 'Incorrect password.' });

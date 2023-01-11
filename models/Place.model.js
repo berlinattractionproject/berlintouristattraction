@@ -26,6 +26,9 @@ const placeSchema = new Schema(
     category: {
         type: String,
     },
+    username:{
+      type:String
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    

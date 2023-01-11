@@ -1,22 +1,26 @@
-<h1>Signup Page</h1>
+<h1>Create an account</h1>
 
-<form action="/auth/signup" method="post">
-    <div>
-        <label><b>Username</b>
-            <input type="text" name="username" placeholder="Enter your username..." maxlength="20" required>
-        </label>
-        <label><b>Email</b>
-            <input type="email" name="email" placeholder="Enter your email..." maxlength="20" required>
-        </label>
-        <label><b>Password</b>
-            <input type="password" name="password" placeholder="Enter your password..." maxlength="20" required>
-        </label>
-    </div>
-    <div>
-        <button class="buttonclass" type="submit">Create User</button>
-    </div>
+
+<form class="authform" action="/auth/signup" method="post">
+       {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+        {{/if}}
+        <div class="wrapper">
+ 
+                <label>Username
+                    <input type="text" name="username" placeholder="Enter your username..." maxlength="20" required>
+                </label>
+                <br>
+                    <label>Email
+                        <input type="email" name="email" placeholder="Enter your email..." maxlength="20" required>
+                    </label>
+                <br>
+                    <label>Password
+                        <input type="password" name="password" placeholder="Enter your password..." maxlength="20" required>
+                    </label>
+            <div>
+                <button class="buttonAuth" type="submit">Sign Up</button>
+            </div>
+        </div>
 </form>
 
-{{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-  {{/if}}

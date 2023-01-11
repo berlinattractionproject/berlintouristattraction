@@ -1,5 +1,7 @@
 const express = require("express");
+const { request } = require("http");
 const { resource } = require("../app");
+const { isLoggedIn } = require("../middleware/route-guard");
 const router = express.Router();
 const Place = require("../models/Place.model");
 
@@ -20,9 +22,8 @@ router.get('/placeMap',(req,res)=>{
 
 /* Create a new Place */
 
-router.get("/create", (req, res) => {
+router.get("/create",isLoggedIn, (req, res) => {
   const allCategories = [];
-
   Place.find()
     .then((allplaces) => {
       allplaces.forEach((place) => {
@@ -37,17 +38,19 @@ router.get("/create", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.post("/create", (req, res) => {
+router.post("/create",isLoggedIn, (req, res) => {
   const { name, address, zipCode, description, category } = req.body;
   /* TO ADD: USERID from req.session once auth is in place */
-  Place.create({ name, address, zipCode, description, category })
+  const username = req.session.currentUser.username; 
+
+  Place.create({ name, address, zipCode, description, category,username})
     .then(res.redirect("/place/placelist"))
     .catch((err) => console.log(err));
 });
 
 /* Edit an existing place */
 
-router.get("/detail/:id", (req, res) => {
+router.get("/detail/:id",isLoggedIn, (req, res) => {
   const { id } = req.params;
   Place.findById(id)
     .then((place) => res.render("place/placedetail", place))
@@ -56,7 +59,7 @@ router.get("/detail/:id", (req, res) => {
 
 /* Delete a place from DB */
 
-router.post("/delete/:id", (req, res) => {
+router.post("/delete/:id",isLoggedIn, (req, res) => {
   const { id } = req.params;
   Place.findByIdAndDelete(id).catch((err) => console.log(err))
   .then(()=>res.redirect('/place/placelist'));

@@ -5,8 +5,11 @@
 }
 
 body {
+
+
   padding: 0;
   margin: 0;
+
 }
 
 a {
@@ -91,7 +94,129 @@ h1 {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
+  color: #EE2222;
 }
+p{
+  text-align: center;
+  color: red;
+}
+
+/* New Css */
+
+.placewrapper{
+  
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
+    box-shadow:#EE2222;
+  
+}
+.createform input {
+
+  width: 65%;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e4e4e4;
+
+
+}
+
+.placewrapper label {
+  float:left;
+  width:40%;
+  text-align:right;
+  margin-right:5px; /* optional */
+}
+
+.placewrapper textarea {
+  width: 65%;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e4e4e4;
+
+}
+
+
+
+.addplace button{
+  color:#FFFFFF;
+  height: 58px;
+  width:198px;
+  background:#EE2222;
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 20px;
+}
+
+
+
+
+.btndelete{
+  box-sizing: border-box;
+  position: absolute;
+  width: 198px;
+  height: 58px;
+  background: #FFFDFD;
+  border: 1px solid #EE2222;
+}
+
+.wrapper{
+  width: 330px;
+  padding: 2rem 1rem;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0,0,0,0,1);
+}
+h1{
+  font-size: 2rem;
+  color:black;
+  margin-bottom: 1.2rem;
+}
+
+
+.authform input{
+  width: 92%;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e4e4e4;
+
+}
+
+.buttonAuth{
+  font-size: 1rem;;
+  margin-top: 1.8px;
+  padding: 10px 0;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width:90%;
+  background:lightcoral;
+}
+
+.buttonAuth:hover{
+  background: coral;
+}
+input:focus{
+  border: 1px solid rgb(192,192,192);
+}
+/* end*/
+
+
 
 .buttonclass {
   background-color: #00b7ff;
@@ -146,3 +271,4 @@ h1 {
   font-size: 16px;
   font-weight: 700;
 }
+
