@@ -1,27 +1,27 @@
-<h1>I know a place </h1>
+<h1 class="centerheader">I know a place </h1>
 
 <form class="createform" action="/place/create" method="post">
 
 <div class="placewrapper">
     <label>Name of the Place
-      <input type="text" name="name" placeholder="What's the name?">
+      <input type="text" name="name" placeholder="What's the name?" required>
     </label>
 
     <label>Address
-      <input type="text" name="address" placeholder="Where it is located?">
+      <input type="text" name="address" placeholder="Where it is located?" required>
     </label>
 
     <label>ZIP-Code
-      <input type="number" name="zipCode" placeholder="What's the zip-code?">
+      <input type="number" name="zipCode" placeholder="What's the zip-code?" required>
     </label>
 
     <label>Category
-      <input list="category" name="category" placeholder="Choose a category">
+      <input list="category" name="category" placeholder="Choose a category" required>
     </label>
 
     
-      <label>Description
-      <textarea name="description" cols="30" rows="10">Description</textarea>
+      <label>
+      <textarea name="description" cols="30" rows="10" required>Description</textarea>
     </label>
     
 

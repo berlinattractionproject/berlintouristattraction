@@ -1,7 +1,11 @@
-<h1>Welcome back</h1>
+<h1 class="centerheader">Login</h1>
 
 <form class="authform" action="/auth/login" method="POST">
+ 
  <div class="wrapper">
+  {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
     <label> Email
       <input type="text" name="email" placeholder="Enter you email" maxlength="20"/>
     </label>
@@ -12,7 +16,5 @@
  
     <button class="buttonAuth" type="submit">Login</button>
  </div>
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-</form>g
+   
+</form>
