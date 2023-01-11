@@ -24,6 +24,8 @@ router.get('/placeMap',(req,res)=>{
 
 router.get("/create",isLoggedIn, (req, res) => {
   const allCategories = [];
+  const {currentUser} = req.session
+    console.log(req.session.currentUser);
   Place.find()
     .then((allplaces) => {
       allplaces.forEach((place) => {
@@ -33,7 +35,7 @@ router.get("/create",isLoggedIn, (req, res) => {
       });
     })
     .then(() => {
-      res.render("place/createplace", { allCategories });
+      res.render("place/createplace", { allCategories,currentUser });
     })
     .catch((err) => console.log(err));
 });

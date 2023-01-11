@@ -5,13 +5,19 @@
 }
 
 body {
-
-
+  
+  background-image: url("/images/berlin.jpg");
   padding: 0;
   margin: 0;
-
+  
 }
 
+.centerheader{
+  font-size: 2em;
+  text-align: center;
+  text-decoration: wavy;
+  padding-bottom: 20px;
+}
 a {
   color: #00b7ff;
 }
@@ -88,18 +94,23 @@ nav h1{
 }
 
 
+.error{
+  text-align: center;
+  color: red;
+}
 
-
-h1 {
+/* h1 {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
   color: #EE2222;
 }
+
+
 p{
   text-align: center;
   color: red;
-}
+} */
 
 /* New Css */
 
@@ -124,7 +135,7 @@ p{
   margin-bottom: 10px;
   border-radius: 20px;
   background-color: #e4e4e4;
-
+  
 
 }
 
