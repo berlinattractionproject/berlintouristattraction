@@ -1,19 +1,41 @@
-<h1>Enter a new place</h1>
+<h1>I know a place </h1>
 
-<form action="/place/create" method="post">
-    <input type="text" name="name" placeholder="Enter the name of the place">
-    <input type="text" name="address" placeholder="Enter the address of the place">
-    <input type="number" name="zipCode" placeholder="Enter the zip code of the place">
-    <textarea name="description" cols="30" rows="10">Description</textarea>
-<input list="category" name="category" placeholder="Category">
+<form class="createform" action="/place/create" method="post">
 
-<datalist id="category">
+<div class="placewrapper">
+    <label>Name of the Place
+      <input type="text" name="name" placeholder="What's the name?">
+    </label>
+
+    <label>Address
+      <input type="text" name="address" placeholder="Where it is located?">
+    </label>
+
+    <label>ZIP-Code
+      <input type="number" name="zipCode" placeholder="What's the zip-code?">
+    </label>
+
+    <label>Category
+      <input list="category" name="category" placeholder="Choose a category">
+    </label>
+
+    
+      <label>Description
+      <textarea name="description" cols="30" rows="10">Description</textarea>
+    </label>
+    
+
+
+    <div class="addplace">
+      <button type="submit">Add Place</button>
+    </div>
+
+
+
+  <datalist id="category">
     {{#each allCategories}}
-  <option value="{{this}}">
-
+    <option value="{{this}}">
     {{/each}}
-
-</datalist>
-<button type="submit">Submit</button>
-
+  </datalist>
+</div>
 </form>
