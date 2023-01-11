@@ -20,6 +20,30 @@ const places = [
       "Berlin's zoo holds a triple record as Germany's oldest (since 1844), most species-rich and most popular animal park. Top billing at the moment goes to a pair of bamboo-devouring pandas on loan from China. The menagerie includes nearly 20,000 critters representing 1500 species, including orangutans, rhinos, giraffes and penguins. Public feeding sessions take place throughout the day – check the schedule online and by the ticket counter.",
     category: "kid-friendly",
   },
+  {
+    name: "Tempelhofer Feld",
+    address: "Tempelhofer Damm",
+    zipCode: "12101",
+    description:
+      "Tempelhofer Feld embodies Berlin’s bohemian spirit – when the airfield here closed in 2008, Berliners fought to keep all 890 acres (360 hectares) for the public instead of commerce and housing. After a referendum, the dream came true and Berlin’s largest park has been relished by the masses ever since.",
+    category: "Outdoor",
+  },
+  {
+    name: "KW Institute for Contemporary Art",
+    address: "Auguststraße 69",
+    zipCode: "10117",
+    description:
+      "The KW Institute for Contemporary Art (also known as Kunst-Werke) is a contemporary art institution located in Auguststraße 69 in Berlin-Mitte, Germany. Klaus Biesenbach was the founding director of KW; the current director is Krist Gruijthuijsen.",
+    category: "Art",
+  },
+  {
+    name: "Weißensee Jewish cemetery",
+    address: "Herbert-Baum-Straße 45",
+    zipCode: "13088",
+    description:
+      "The Jewish Cemetery in Weißensee is the largest in Europe. It is a fascinating place full of history, and full of stories.",
+    category: "History",
+  },
 ];
 
 mongoose

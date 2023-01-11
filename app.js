@@ -26,6 +26,7 @@ app.locals.appTitle = `${capitalize(projectName)}`;
 
 
 
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
@@ -34,6 +35,8 @@ const authRoutes = require('./routes/auth.routes');
 app.use("/auth", authRoutes);
 const placeRoutes = require("./routes/place.routes");
 app.use("/place", placeRoutes);
+const mapsRoutes = require("./routes/maps.routes");
+app.use("/maps", mapsRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
