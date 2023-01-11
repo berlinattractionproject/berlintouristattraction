@@ -1,31 +1,32 @@
-<h1>Edit this Place</h1>
+<h1 class="centerheader">Edit this Place</h1>
 
 {{!-- if the user is logged in, show: --}}
 {{#if username}}
       <form class="createform" action="/place/edit/{{id}}">
         <div class="placewrapper">
           <label>Name of the Place
-            <input type="text" name="name" value="{{name}}">
+            <input type="text" name="name" value="{{name}}" required>
           </label>
 
           <label>Address
-            <input type="text" name="address" value="{{address}}">
+            <input type="text" name="address" value="{{address}}" required>
           </label>
 
           <label>ZIP-Code
-            <input type="number" name="zipCode" value="{{zipCode}}">
+            <input type="number" name="zipCode" value="{{zipCode}}" required>
           </label>
-          <label>Description
-              <textarea name="description" cols="30" rows="10">{{description}}</textarea>
-            </label>
           <label>Category
-            <input type="string" name="category" value="{{category}}">
+            <input type="string" name="category" value="{{category}}" required>
           </label>
+          <label>
+              <textarea name="description" cols="30" rows="10" required>{{description}}</textarea>
+            </label>
+          
             <button class="addplace" type="submit">Save changes</button>
         </form>
 
         <form action="/place/delete/{{id}}" method="post">
-          <button class="btndelete" type="submit">Delete</button>
+          <button class="addplace" type="submit">Delete</button>
       </div>
       </form>
 {{/if}}

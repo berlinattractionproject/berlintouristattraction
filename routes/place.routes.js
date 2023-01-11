@@ -42,7 +42,9 @@ router.get("/myplaces", (req, res, next) => {
 
 router.get("/create",isLoggedIn, (req, res) => {
   const allCategories = [];
+
   const { currentUser } = req.session;
+
 
   Place.find()
     .then((allplaces) => {
