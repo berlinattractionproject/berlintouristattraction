@@ -8,8 +8,11 @@ const Place = require("../models/Place.model");
 /* List of all Places */
 
 router.get("/placelist", (req, res, next) => {
+  const { currentUser } = req.session;
+
+
   Place.find()
-    .then((place) => res.render("place/placelist", { place }))
+    .then((place) => res.render("place/placelist", { place,currentUser }))
     .catch((err) => console.log(err));
 });
 

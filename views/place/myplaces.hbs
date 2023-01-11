@@ -1,5 +1,6 @@
 <h1>show all of the places that you added</h1>
 
+<div id="placesList">
 <ul>
   {{#each placesFound}}
     <div>
@@ -10,6 +11,13 @@
       <p>{{description}}</p>
       {{!-- <p>{{category}}</p> --}}
     </div>
+    <div class="myPlcBtnContainer">
+<a href="/place/edit/{{id}}">Edit</a>     
+
+<form action="/place/delete/{{id}}" method="post">
+          <button type="submit">Delete</button>
+    </div>
 
   {{/each}}
 </ul>
+</div>
