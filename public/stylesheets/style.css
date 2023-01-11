@@ -5,20 +5,15 @@
 }
 
 body {
-
-
   padding: 0;
   margin: 0;
-
 }
 
 a {
   color: #00b7ff;
 }
 
-h1 {
-  color: 15px;
-}
+
 
 #map {
   width: 60vw;
@@ -31,29 +26,55 @@ nav {
   height: 10vh;
 }
 
-nav img{
+nav img {
   height: 70px;
-  width:70px;
-  margin:0;
-  padding:0;
+  width: 70px;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul{
+nav ul {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   justify-content: center;
-  /* align-items: center; */
+}
 
+/* Nav Bar Logged Out */
+.navItemOne {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.navItemTwo {
+  grid-area: 1 / 2 / 4 / 5;
+}
+.navItemThree {
+  grid-area: 1 / 9 / 10 / 11;
+}
+.navItemFour{
+  grid-area: 1 / 11 / 12 / 13;
+}
+
+/* Nav Bar Logged In */
+.navItemOneLoggedIn {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.navItemTwoLoggedIn {
+  grid-area: 1 / 2 / 4 / 5;
+}
+.navItemThreeLoggedIn {
+  grid-area: 1 / 7 / 8 / 9;
+}
+.navItemFourLoggedIn {
+  grid-area: 1 / 9 / 10 / 11;
 
 }
-.navItemOne { grid-area: 1 / 1 / 2 / 2;
- 
- }
-.navItemTwo { grid-area: 1 / 2 / 4 / 5; }
-.navItemThree { grid-area: 1 / 11 / 12 / 13; }
+
+.navItemFiveLoggedIn {
+  grid-area: 1 / 11 / 12 / 13;
+
+}
 
 .nav-bar {
   background-color: #ee2222;
@@ -65,15 +86,13 @@ nav ul{
   color: white;
 }
 
-nav h1{
-  color:white;
+nav h1 {
+  color: white;
   font-size: 48px;
   font-weight: 700;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
-
-
 
 .nav-bar-ul li {
   list-style-type: none;
@@ -82,15 +101,23 @@ nav h1{
 
 .nav-bar-item {
   color: white;
-  font-size: 2em;
+  font-size: 2rem;
   text-decoration: none;
   margin-right: 20px;
 }
 
+#logout-form button{
+  background: none;
+  border: none;
+  padding: 0;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  cursor: pointer;
 
+}
 
-
-h1 {
+/* h1 {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
@@ -99,24 +126,21 @@ h1 {
 p{
   text-align: center;
   color: red;
-}
+} */
 
 /* New Css */
 
-.placewrapper{
-  
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    border-radius: 10px;
-    box-shadow:#EE2222;
-  
+.placewrapper {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 10px;
+  box-shadow: #ee2222;
 }
 .createform input {
-
   width: 65%;
   outline: none;
   border: 1px solid #fff;
@@ -124,15 +148,13 @@ p{
   margin-bottom: 10px;
   border-radius: 20px;
   background-color: #e4e4e4;
-
-
 }
 
 .placewrapper label {
-  float:left;
-  width:40%;
-  text-align:right;
-  margin-right:5px; /* optional */
+  float: left;
+  width: 40%;
+  text-align: right;
+  margin-right: 5px; /* optional */
 }
 
 .placewrapper textarea {
@@ -143,50 +165,43 @@ p{
   margin-bottom: 10px;
   border-radius: 20px;
   background-color: #e4e4e4;
-
 }
 
-
-
-.addplace button{
-  color:#FFFFFF;
+.addplace button {
+  color: #ffffff;
   height: 58px;
-  width:198px;
-  background:#EE2222;
+  width: 198px;
+  background: #ee2222;
   font-weight: 500;
   font-size: 24px;
   border-radius: 20px;
 }
 
-
-
-
-.btndelete{
+.btndelete {
   box-sizing: border-box;
   position: absolute;
   width: 198px;
   height: 58px;
-  background: #FFFDFD;
-  border: 1px solid #EE2222;
+  background: #fffdfd;
+  border: 1px solid #ee2222;
 }
 
-.wrapper{
+.wrapper {
   width: 330px;
   padding: 2rem 1rem;
   margin: 50px auto;
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 20px 35px rgba(0,0,0,0,1);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0, 1);
 }
-h1{
+h1 {
   font-size: 2rem;
-  color:black;
+  color: black;
   margin-bottom: 1.2rem;
 }
 
-
-.authform input{
+.authform input {
   width: 92%;
   outline: none;
   border: 1px solid #fff;
@@ -194,29 +209,26 @@ h1{
   margin-bottom: 10px;
   border-radius: 20px;
   background-color: #e4e4e4;
-
 }
 
-.buttonAuth{
-  font-size: 1rem;;
+.buttonAuth {
+  font-size: 1rem;
   margin-top: 1.8px;
   padding: 10px 0;
   border-radius: 20px;
   outline: none;
   border: none;
-  width:90%;
-  background:lightcoral;
+  width: 90%;
+  background: lightcoral;
 }
 
-.buttonAuth:hover{
+.buttonAuth:hover {
   background: coral;
 }
-input:focus{
-  border: 1px solid rgb(192,192,192);
+input:focus {
+  border: 1px solid rgb(192, 192, 192);
 }
 /* end*/
-
-
 
 .buttonclass {
   background-color: #00b7ff;
@@ -271,4 +283,3 @@ input:focus{
   font-size: 16px;
   font-weight: 700;
 }
-

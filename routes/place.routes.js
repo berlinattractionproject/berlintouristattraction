@@ -13,17 +13,34 @@ router.get("/placelist", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+router.get("/myplaces", (req, res, next) => {
+  console.log(req.session.currentUser)
+  const {username} = req.session.currentUser
+  const { currentUser } = req.session;
+
+  Place.find({username:username})
+    .then((placesFound)=>{
+      console.log(placesFound)
+      res.render('place/myplaces',{placesFound,currentUser})
+    }
+    
+    )
+
+});
+
 /* Map of all places */
 
-router.get('/placeMap',(req,res)=>{
-  res.render('place/placeMap')
+// router.get('/placeMap',(req,res)=>{
+//   res.render('place/placeMap')
   
-})
+// })
 
 /* Create a new Place */
 
 router.get("/create",isLoggedIn, (req, res) => {
   const allCategories = [];
+  const { currentUser } = req.session;
+
   Place.find()
     .then((allplaces) => {
       allplaces.forEach((place) => {
@@ -33,7 +50,7 @@ router.get("/create",isLoggedIn, (req, res) => {
       });
     })
     .then(() => {
-      res.render("place/createplace", { allCategories });
+      res.render("place/createplace", { allCategories,currentUser });
     })
     .catch((err) => console.log(err));
 });
