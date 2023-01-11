@@ -1,15 +1,29 @@
-<h1>This is the place list</h1>
-
+<div id="landingContainer">
+<div id="placesList">
 <ul>
   {{#each place}}
     <div>
       <a href="/place/detail/{{id}}">
         <h3>{{name}}</h3>
       </a>
-      <p>Address: {{address}} {{zipCode}} Berlin</p>
+      <p>{{address}} {{zipCode}} Berlin </p>
       <p>{{description}}</p>
-      <p>{{category}}</p>
+      {{!-- <p>{{category}}</p> --}}
     </div>
 
   {{/each}}
 </ul>
+</div>
+
+<div id="mapContainer">
+<div id="map"></div>
+
+</div>
+</div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+

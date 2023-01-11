@@ -16,6 +16,7 @@
 
       <nav class="nav-bar">
          <ul class="nav-bar-ul">
+            <li><img src="/images/logo.png" alt=""></li>
             <li id="to-right" class="nav-bar-li">
              <form id="logout-form" action="/auth/logout" method="POST">
                <button>Logout</button>
@@ -29,8 +30,10 @@
      {{else}} 
       <nav class="nav-bar">
          <ul class="nav-bar-ul">
-            <li id="to-right" class="nav-bar-li">
-            <a class="nav-bar-item" href="/auth/signup">Signup</a> <span> | </span>
+            <li class="navItemOne"><img src="/images/logo.png" alt=""></li>
+            <li class="navItemTwo"><h1>Berlin TO:DO</h1></li>
+            <li class="navItemThree">
+            <a class="nav-bar-item" href="/auth/signup">Signup</a> <span> </span>
             <a class="nav-bar-item" href="/auth/login">Login</a> {{!-- !!! --}}
             </li>
          </ul>
