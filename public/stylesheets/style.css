@@ -276,7 +276,7 @@ input:focus {
 
 /* Placelist Text Styling */
 
-#placesList a {
+#placesList h3 {
   color: #ee2222;
   text-decoration: none;
 }
