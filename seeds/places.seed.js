@@ -3,7 +3,7 @@ const Place = require("../models/Place.model");
 const MongoStore = require('connect-mongo');
 
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/berlinattractions";
+  process.env.MONGODB_URI 
 
   console.log(MONGO_URI)
 const places = [
