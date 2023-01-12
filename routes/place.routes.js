@@ -74,17 +74,28 @@ router.post("/create",isLoggedIn, (req, res) => {
 
 router.get("/detail/:id",isLoggedIn, (req, res) => {
   const { id } = req.params;
+  const { currentUser } = req.session;
+
   Place.findById(id)
-    .then((place) => res.render("place/placedetail", place))
+    .then((place) => res.render("place/placedetail", {place,currentUser}))
     .catch((err) => console.log(err));
 });
+
+router.post('/detail/:id',isLoggedIn,(req,res)=>{
+  const { id } = req.params;
+  const {name,address,zipCode,category,description} = req.body
+  console.log(req.body)
+Place.findByIdAndUpdate(id,{name,address,zipCode,category,description})
+  .then(()=>res.redirect('/place/myplaces'))
+  .catch(err=>console.log(err))
+})
 
 /* Delete a place from DB */
 
 router.post("/delete/:id",isLoggedIn, (req, res) => {
   const { id } = req.params;
   Place.findByIdAndDelete(id).catch((err) => console.log(err))
-  .then(()=>res.redirect('/place/placelist'));
+  .then(()=>res.redirect('/place/myplaces'));
 });
 
 
