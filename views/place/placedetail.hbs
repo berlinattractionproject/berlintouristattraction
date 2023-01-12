@@ -1,38 +1,45 @@
 <div class="backgroundImg">
-{{#if currentUser.username}}
-<h1 class="centerheader">Edit this Place</h1>
+  <h1 class="centerheader">Edit this Place</h1>
+  <div class="outsidediv">
+ <div class="editForm">
+    <form action="/place/detail/{{place.id}}" method="post">
+      <div class="insideFormDiv">
+        <input type="text" name="name" value="{{place.name}}" required />
 
-      <form class="createform" action="/place/detail/{{place.id}}" method="post">
-        <div class="placewrapper">
-          <label>
-            <input type="text" name="name" value="{{place.name}}" required>
-          </label>
+        <input type="text" name="address" value="{{place.address}}" required />
 
-          <label>
-            <input type="text" name="address" value="{{place.address}}" required>
-          </label>
-
-          <label>
-            <input type="number" name="zipCode" value="{{place.zipCode}}" required>
-          </label>
-          <label>
-            <input type="string" name="category" value="{{place.category}}" required>
-          </label>
-          <label>
-              <textarea name="description" cols="30" rows="10" required>{{place.description}}</textarea>
-            </label>
-            <div class="btncontainer"> 
-                  <button  class="editplace" type="submit">Save changes</button>
-                
-            </form>
-            <form action="/place/delete/{{id}}" method="post">
-              <button class="deleteplace" type="submit">Delete</button>
-          </div> 
+        <input
+          type="number"
+          name="zipCode"
+          value="{{place.zipCode}}"
+          required
+        />
+        <input
+          type="string"
+          name="category"
+          value="{{place.category}}"
+          required
+        />
+        <textarea
+          name="description"
+          cols="30"
+          rows="10"
+          required
+        >{{place.description}}</textarea>
+</div>
+       </div>
+  </div>
+ 
+      <div class="outsideFormDiv">
+ <button class="editplace" type="submit">Save changes</button>
+<form action="/place/delete/{{id}}" method="post">
+    <button class="deleteplace" type="submit">Delete</button>
+  </form>
       </div>
-      </form>
-{{/if}}
+
+    </form>
+  
+
+  
 
 </div>
-
-
-

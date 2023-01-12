@@ -1,43 +1,60 @@
 <div class="backgroundImg">
-<h1 class="centerheader">I know a place </h1>
+  <h1 class="centerheader">I know a place </h1>
+  <div class="outsidediv">
 
-<form class="createform" action="/place/create" method="post">
+    <div class="editForm">
+      <form class="createform" action="/place/create" method="post">
+        <div class="insideFormDiv">
+          <input
+            type="text"
+            name="name"
+            placeholder="What's the name?"
+            required
+          />
 
-<div class="placewrapper">
-    <label>
-      <input type="text" name="name" placeholder="What's the name?" required>
-    </label>
+          <input
+            type="text"
+            name="address"
+            placeholder="Where it is located?"
+            required
+          />
 
-    <label>
-      <input type="text" name="address" placeholder="Where it is located?" required>
-    </label>
+          <input
+            type="number"
+            name="zipCode"
+            placeholder="What's the zip-code?"
+            required
+          />
 
-    <label>
-      <input type="number" name="zipCode" placeholder="What's the zip-code?" required>
-    </label>
+          <input
+            list="category"
+            name="category"
+            placeholder="Choose a category"
+            required
+          />
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            required
+          >Description</textarea>
 
-    <label>
-      <input list="category" name="category" placeholder="Choose a category" required>
-    </label>
-      <label>
-      <textarea name="description" cols="30" rows="10" required>Description</textarea>
-    </label>
-    
+          <div class="addplace">
+            <button type="submit">Add Place</button>
+          </div>
 
+          <datalist id="category">
+            {{#each allCategories}}
+              <option value="{{this}}"></option>
+            {{/each}}
+          </datalist>
 
-    <div class="addplace">
-      <button type="submit">Add Place</button>
+        </div>
+
+      </form>
+
     </div>
 
-
-
-  <datalist id="category">
-    {{#each allCategories}}
-    <option value="{{this}}">
-    {{/each}}
-  </datalist>
-</div>
-</form>
+  </div>
 
 </div>
-
