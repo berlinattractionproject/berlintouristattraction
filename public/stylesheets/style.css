@@ -188,13 +188,16 @@ nav h1 {
   border-radius: 20px;
 }
 
-.btndelete {
-  box-sizing: border-box;
+.deleteplace {
+  
   position: absolute;
-  width: 198px;
+  color: #ffffff;
   height: 58px;
-  background: #fffdfd;
-  border: 1px solid #ee2222;
+  width: 198px;
+  background:  #FFFDFD;
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 20px;
 }
 
 .wrapper {
