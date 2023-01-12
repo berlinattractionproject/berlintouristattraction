@@ -17,7 +17,7 @@ module.exports = app => {
       resave: true,
       saveUninitialized: true,
       store: MongoStore.create({ 
-        mongoUrl: 'mongodb://127.0.0.1:27017/berlinattractions', // setting the connection string to save my store
+        mongoUrl: process.env.MONGODB_URI, // setting the connection string to save my store
         ttl: 24 * 60 * 60 // the time to live for my session
     }),
       cookie: {
