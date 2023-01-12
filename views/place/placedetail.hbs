@@ -32,9 +32,10 @@
  
       <div class="outsideFormDiv">
  <button class="editplace" type="submit">Save changes</button>
-<form action="/place/delete/{{id}}" method="post">
-    <button class="deleteplace" type="submit">Delete</button>
+
   </form>
+  <form action="/place/delete/{{place.id}}" method="post">
+    <button class="deleteplace" type="submit">Delete</button>
       </div>
 
     </form>

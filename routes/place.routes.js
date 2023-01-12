@@ -94,8 +94,10 @@ Place.findByIdAndUpdate(id,{name,address,zipCode,category,description})
 
 router.post("/delete/:id",isLoggedIn, (req, res) => {
   const { id } = req.params;
-  Place.findByIdAndDelete(id).catch((err) => console.log(err))
-  .then(()=>res.redirect('/place/myplaces'));
+  console.log('id',id.id)
+  Place.findByIdAndDelete(id)
+  .then(()=>res.redirect('/place/myplaces'))
+  .catch((err) => console.log(err));
 });
 
 
