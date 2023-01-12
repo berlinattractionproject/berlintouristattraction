@@ -1,7 +1,7 @@
+<div class="backgroundImg">
+{{#if currentUser.username}}
 <h1 class="centerheader">Edit this Place</h1>
 
-{{!-- if the user is logged in, show: --}}
-{{#if currentUser.username}}
       <form class="createform" action="/place/detail/{{place.id}}" method="post">
         <div class="placewrapper">
           <label>
@@ -31,12 +31,8 @@
       </div>
       </form>
 {{/if}}
-{{!-- if the user is NOT loggend in, show: --}}
+
+</div>
 
 
-   {{!--  <div>
-    <h3>{{name}}</h3>
-      <p>Address: {{address}} {{zipCode}} Berlin</p>
-      <p>{{description}}</p>
-      <p>{{category}}</p>
-    </div> --}}
+
